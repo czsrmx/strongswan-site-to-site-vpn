@@ -1,0 +1,8 @@
+gateway-a/config/ipsec.secrets
+gateway-b/config/ipsec.secrets
+
+*.log
+
+*.swp
+
+.DS_Store

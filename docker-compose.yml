@@ -1,0 +1,74 @@
+services:
+
+  gateway-a:
+    build: ./gateway-a
+    container_name: gateway-a
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    tty: true
+    command: sleep infinity
+    networks:
+      wan:
+        ipv4_address: 100.64.10.10
+      lan-a:
+        ipv4_address: 10.111.10.10
+    volumes:
+    - ./gateway-a/config/ipsec.conf:/etc/ipsec.conf
+    - ./gateway-a/config/ipsec.secrets:/etc/ipsec.secrets
+
+  gateway-b:
+    build: ./gateway-b
+    container_name: gateway-b
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    tty: true
+    command: sleep infinity
+    networks:
+      wan:
+        ipv4_address: 100.64.10.20
+      lan-b:
+        ipv4_address: 10.222.20.20
+    volumes:
+    - ./gateway-b/config/ipsec.conf:/etc/ipsec.conf
+    - ./gateway-b/config/ipsec.secrets:/etc/ipsec.secrets
+
+  host-a:
+    build: ./host-a
+    container_name: host-a
+    tty: true
+    command: sleep infinity
+    cap_add:
+      - NET_ADMIN
+    networks:
+      lan-a:
+        ipv4_address: 10.111.10.100
+
+  host-b:
+    build: ./host-b
+    container_name: host-b
+    tty: true
+    command: sleep infinity
+    cap_add:
+      - NET_ADMIN
+    networks:
+      lan-b:
+        ipv4_address: 10.222.20.100
+
+networks:
+
+  wan:
+    ipam:
+      config:
+        - subnet: 100.64.10.0/24
+
+  lan-a:
+    ipam:
+      config:
+        - subnet: 10.111.10.0/24
+
+  lan-b:
+    ipam:
+      config:
+        - subnet: 10.222.20.0/24
