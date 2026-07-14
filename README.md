@@ -2,9 +2,8 @@
 
 Laboratório de rede que simula uma VPN Site-to-Site entre duas LANs isoladas, usando StrongSwan (IKEv2 + ESP) sobre containers Docker.
 
-O objetivo foi reproduzir, em ambiente controlado, um cenário comum em redes corporativas: interligar duas filiais através de um túnel IPsec, com todo o roteamento e a negociação de segurança feitos manualmente — sem soluções prontas de nuvem ou appliances comerciais.
+O objetivo foi reproduzir, em ambiente controlado, um cenário comum em redes corporativas: interligar duas filiais através de um túnel IPsec, com todo o roteamento e a negociação de segurança feitos manualmente, sem soluções prontas de nuvem ou appliances comerciais.
 
-Projeto desenvolvido para o meu portfólio em Redes e Cibersegurança, como estudante de Ciência da Computação.
 
 ---
 
