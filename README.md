@@ -178,32 +178,6 @@ Exibe as SAs de ESP negociadas e instaladas.
 
 ---
 
-## Capturas de tela
-
-> Screenshots do ambiente em funcionamento, salvas em `images/`.
-
-```
-images/
-├── topology.png
-├── docker-ps.png
-├── ipsec-status.png
-├── tcpdump-esp.png
-└── ping-success.png
-```
-
-```markdown
-## Túnel VPN ativo
-![VPN Status](images/ipsec-status.png)
-
-## Teste de ping entre as LANs
-![Ping](images/ping-success.png)
-
-## Pacotes ESP capturados
-![ESP](images/tcpdump-esp.png)
-```
-
----
-
 ## O que este projeto demonstra
 
 - Configuração de VPN Site-to-Site com StrongSwan
@@ -242,4 +216,4 @@ Estudante de Ciência da Computação, com foco em Redes, Cibersegurança, Linux
 
 ---
 
-Se este projeto foi útil, considere deixar uma ⭐ no repositório.
+Se este projeto foi útil, considere deixar uma estrela  no repositório.
